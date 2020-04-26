@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa4c8756-95f2-4517-9d7f-05f46d613c87" name="Default Changelist" comment="" />
+    <list default="true" id="aa4c8756-95f2-4517-9d7f-05f46d613c87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ad.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Ad.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200418171459.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/AdRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ad/_collection.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ad/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ad/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ad/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -118,9 +146,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
     </include_path>
   </component>
   <component name="ProjectId" id="1agYhha1JA3qU2SGS3o2r6wTxQN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -128,6 +161,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -147,7 +181,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587159190226</updated>
-      <workItem from="1587159191476" duration="8233000" />
+      <workItem from="1587159191476" duration="30962000" />
+      <workItem from="1587487868879" duration="11164000" />
+      <workItem from="1587577173790" duration="9763000" />
+      <workItem from="1587753189551" duration="17928000" />
     </task>
     <servers />
   </component>
@@ -155,9 +192,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="870" y="0" key="SettingsEditor" timestamp="1587217259773">
+    <state x="1167" y="358" width="513" height="356" key="NewPhpClassDialog" timestamp="1587297679385">
       <screen x="0" y="0" width="1920" height="728" />
     </state>
-    <state x="870" y="0" key="SettingsEditor/1920.0.1366.768/0.0.1920.728@0.0.1920.728" timestamp="1587217259773" />
+    <state x="1167" y="358" width="513" height="356" key="NewPhpClassDialog/1920.0.1366.768/0.0.1920.728@0.0.1920.728" timestamp="1587297679385" />
+    <state x="870" y="0" key="SettingsEditor" timestamp="1587577152981">
+      <screen x="0" y="0" width="1920" height="728" />
+    </state>
+    <state x="870" y="0" key="SettingsEditor/1920.0.1366.768/0.0.1920.728@0.0.1920.728" timestamp="1587577152981" />
+    <state x="2329" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1587753189043">
+      <screen x="1920" y="0" width="1366" height="768" />
+    </state>
+    <state x="575" y="197" key="com.intellij.ide.util.TipDialog/1920.0.1366.768/0.0.1920.728@0.0.1920.728" timestamp="1587577174225" />
+    <state x="2329" y="208" key="com.intellij.ide.util.TipDialog/1920.0.1366.768/0.0.1920.728@1920.0.1366.768" timestamp="1587753189043" />
   </component>
 </project>
