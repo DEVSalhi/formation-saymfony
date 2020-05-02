@@ -49,13 +49,17 @@
 
             </div>
             <div class="col">
-                <div class="row">
+                <div class="row mb-3 align-items-center">
                     <div class="col-4">
-                        <img src="http://placehold.it/64x64" alt="">
+                        <a href="{{ path('user_show',{'slug':ad.author.slug}) }}">
+                           <img src="{{ ad.author.picture }}" class="avatar avatar-medium" alt="">
+                        </a>
                     </div>
-                    <div class="col">
-                        <h3>Soufien SALHI</h3>
-                        <span class="badge badge-primary">3 annonces</span>
+                    <div class="col-8">
+                        <a href="{{ path('user_show',{'slug':ad.author.slug}) }}">
+                           <h3>{{ ad.author.fullname }}</h3>
+                        </a>
+                        <span class="badge badge-primary">{{ ad.author.ads | length }} annonces</span>
 
                     </div>
                 </div>
