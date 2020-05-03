@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AccountController extends AbstractController
 {
@@ -74,6 +75,7 @@ class AccountController extends AbstractController
 
     /**
      * @Route("/account/profile",name="account_profile")
+     * @IsGranted("ROLE_USER")
      * @return  Response
      */
     public function profile(Request $request,EntityManagerInterface $manager){
@@ -91,6 +93,7 @@ class AccountController extends AbstractController
     /**
      * Permet de modifier le mot de passe
      * @Route("/account/update-password",name="account_password")
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function updatePassword(Request $request,EntityManagerInterface $manager,UserPasswordEncoderInterface $encoder){
@@ -207,14 +210,14 @@ class AccountController extends AbstractController
     /**
      * Permet d'afficher le profil de l'utlisateur
      * @Route("/account",name="account_index")
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function myAccount(){
-        if(!empty($this->getUser()))
+
         return $this->render('user/index.html.twig',[
             'user'=>$this->getUser()
         ]);
-        return $this->redirectToRoute('login_account');
 
     }
 }

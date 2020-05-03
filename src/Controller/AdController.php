@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class AdController extends AbstractController
 {
@@ -32,13 +34,12 @@ class AdController extends AbstractController
     /**
      * Peremt de creer une annonce
      * @Route("/ads/new",name="ads_create")
+     * @IsGranted("ROLE_USER")
      */
 
     public function create(Request $request,EntityManagerInterface $manager){
 
         $user=$this->getUser();
-        if(empty($user))
-            return $this->redirectToRoute('login_account');
         $ad=new Ad();
         $form=$this->createForm(AdType::class,$ad);
         $form->handleRequest($request);
@@ -77,6 +78,7 @@ class AdController extends AbstractController
     /**
      * permet d'afficher le formulaire d'edition
      * @Route("/ads/{slug}/edit",name="ads_edit")
+     * @Security("is_granted('ROLE_USER') and user === ad.getAuthor()",message="cette annonce ne vous appartient  pas, vous ne pouvez pas la modifier" )
      * @return Response
      */
     public function edit(Ad $ad,Request $request,EntityManagerInterface $manager){
@@ -99,5 +101,21 @@ class AdController extends AbstractController
 
         return $this->render('ad/edit.html.twig',['form'=>$form->createView()]);
 
+    }
+
+    /**
+     * @param Ad $ad
+     * @param EntityManagerInterface $manager
+     *
+     * @Route("/ads/{slug}/delete",name="ads_delete")
+     * @Security("is_granted('ROLE_USER') and user === ad.getAuthor()",message="vous n'avez pas le droit d'accéder à cette annonce")
+     * @return Response
+     */
+    public function  delete(Ad $ad,EntityManagerInterface $manager){
+
+        $manager->remove($ad);
+        $manager->flush();
+        $this->addFlash('success',"l'annonce {$ad->getTitle()} est bien supprimé");
+        return $this->redirectToRoute("ads_index");
     }
 }
