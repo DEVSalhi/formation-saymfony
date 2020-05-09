@@ -74,9 +74,15 @@ class Ad
      */
     private $author;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Booking::class, mappedBy="ad")
+     */
+    private $bookings;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->bookings = new ArrayCollection();
     }
 
     /**
@@ -89,6 +95,22 @@ class Ad
             $slugify=new Slugify();
             $this->slug=$slugify->slugify($this->title);
         }
+
+    }
+
+    public  function  getNotAvailableDays(){
+
+        $notAvailableDays=[];
+       foreach ($this->bookings as $booking){
+
+           $date=clone  $booking->getStartDate();
+           while ($date <= $booking->getEndDate()){
+               $notAvailableDays[]=$date->format('d/m/Y');
+               $date->add(new \DateInterval("P1D"));
+           }
+       }
+
+       return $notAvailableDays;
 
     }
 
@@ -220,6 +242,37 @@ class Ad
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Booking[]
+     */
+    public function getBookings(): Collection
+    {
+        return $this->bookings;
+    }
+
+    public function addBookings(Booking $bookings): self
+    {
+        if (!$this->bookings->contains($bookings)) {
+            $this->bookings[] = $bookings;
+            $bookings->setAd($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBookings(Booking $bookings): self
+    {
+        if ($this->bookings->contains($bookings)) {
+            $this->bookings->removeElement($bookings);
+            // set the owning side to null (unless already changed)
+            if ($bookings->getAd() === $this) {
+                $bookings->setAd(null);
+            }
+        }
 
         return $this;
     }
