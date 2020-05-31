@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connexion à l'administration</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="container">
+    <div class="col-md-4 offset-4">
+<div class="card bg-light">
+    <div class="card-header">
+        <h4 class="card-title">
+            <i class="fas-fa-lock"></i>
+            connexion à l'administration
+        </h4>
+    </div>
+
+    <div class="card-body">
+        {% if hasError %}
+        <div class="alert alert-danger">
+            <p> les informations que vous saisissez ne sont pas correctes</p>
+        </div>
+
+        {% endif %}
+        <form method="post">
+        <div class="form-group">
+            <label for="_username">Email</label>
+            <input type="text" value="{{ username }}"  class="form-control" placeholder="votre email" name="_username"  >
+        </div>
+        <div class="form-group">
+            <label for="_password">Email</label>
+            <input type="password" class="form-control" placeholder="votre mot de passe" name="_password"  >
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-lock-open"></i>
+                connexion
+            </button>
+            <a href="{{ path('homepage') }}" class="btn btn-link">
+                <i class="fas fa-arrow-circle-left"></i>
+                retour au site
+            </a>
+        </div>
+        </form>
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

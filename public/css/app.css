@@ -26,3 +26,8 @@ div.carousel-caption{
     max-width: 24px;
     max-height: 24px;
 }
+
+
+span.rating i{
+    color: goldenrod;
+}
