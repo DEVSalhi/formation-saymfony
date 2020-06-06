@@ -22,12 +22,12 @@ administration des reservation
             </tr>
             </thead>
             <tbody>
-            {% for booking in bookings %}
+            {% for booking in pagination.data %}
                 <tr>
                     <td>{{ booking.id }}</td>
                     <td>{{ booking.createdAt | date ('Y-m-d h:i:s') }}</td>
                     <td>
-                        <img src="{{ booking.booker.picture }}" alt="" class="avatar avatar-micro">
+                        <img src="{{ booking.booker.picture }}" alt="" class="avatar avatar-mini mr-2">
                         {{ booking.booker.fullName }}
                     
                     </td>
@@ -49,6 +49,7 @@ administration des reservation
             {% endfor %}
             </tbody>
         </table>
+       {{ pagination.display }}
     </div>
 
 
