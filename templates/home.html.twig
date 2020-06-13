@@ -17,98 +17,31 @@ Bienvenue sur le meilleur reseau d'appartement
         </div>
         <h2 class="mt-3 mb-3">Nos appartement Stars</h2>
         <div class="row ">
-            <div class="col-md-4">
-                <div class="card bg-light mb-3">
-                    <div class="car-header text-center">
-                        3 chambre <strong> 49 euro</strong> <br>
-                        <small>pas encore noté</small>
-                    </div>
-                    <img src="http://placehold.it/1000x400" alt="" style="height: 200px;width: 100%;display: block">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        apparetement de ouf
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem impedit
-                        inventore iure numquam officiis perferendis quis quisquam sint sunt.</p>
-                    <a href="#" class="btn btn-secondary">en savoir plus</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-light mb-3">
-                    <div class="car-header text-center">
-                        3 chambre <strong> 49 euro</strong> <br>
-                        <small>pas encore noté</small>
-                    </div>
-                    <img src="http://placehold.it/1000x400" alt="" style="height: 200px;width: 100%;display: block">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        apparetement de ouf
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem impedit
-                        inventore iure numquam officiis perferendis quis quisquam sint sunt.</p>
-                    <a href="#" class="btn btn-secondary">en savoir plus</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-light mb-3">
-                    <div class="car-header text-center">
-                        3 chambre <strong> 49 euro</strong> <br>
-                        <small>pas encore noté</small>
-                    </div>
-                    <img src="http://placehold.it/1000x400" alt="" style="height: 200px;width: 100%;display: block">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        apparetement de ouf
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorem impedit
-                        inventore iure numquam officiis perferendis quis quisquam sint sunt.</p>
-                    <a href="#" class="btn btn-secondary">en savoir plus</a>
-                </div>
-                </div>
-            </div>
-
+           {% for data in ads %}
+               {% include 'ad/_ad.html.twig' with {'ad':data.annonces} %}
+            {% endfor %}
         </div>
 
         <h2 class="mt-3 mb-3">nos proprietaires starts</h2>
         <div class="row ">
+            {% for data in users %}
             <div class="col">
                 <div class="card border-secondary mb-3">
                     <div class="card-body">
                         <h4 class="card-title">
-                            Soufien SALHI
+                           {{data.user.fullName}}
                         </h4>
                         <hr>
                         <div class="card-text">
-                            <img src="http://placehold.it/64x64" alt="" class="float-left mr-3">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ea, neque? Accusamus
-                                animi, architecto expedita fuga in incidunt, itaque, maxime minima nihil quis sed
-                                sint?</p>
-                            <a href="#" class="btn btn-success float-right">En savoir Plus !</a>
+                            <img src="{{data.user.picture}}" alt="" class="float-left mr-3">
+                            <p>{{data.user.introduction}}</p>
+                            <a href="{{path('user_show',{'slug':data.user.slug})}}" class="btn btn-success float-right">En savoir Plus !</a>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="col">
-                <div class="card border-secondary mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            Soufien SALHI
-                        </h4>
-                        <hr>
-                        <div class="card-text">
-                            <img src="http://placehold.it/64x64" alt="" class="float-left mr-3">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ea, neque? Accusamus
-                                animi, architecto expedita fuga in incidunt, itaque, maxime minima nihil quis sed
-                                sint?</p>
-                            <a href="#" class="btn btn-success float-right">En savoir Plus !</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
